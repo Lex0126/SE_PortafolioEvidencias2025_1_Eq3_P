@@ -60,7 +60,7 @@ class ValorAbsoluto:
             for i in range(len(hijo)):
                 r = rnd.randint(0, 100)
                 if r > rm:
-                    hijo[i] = rnd.randint(-1, 1)  # Mutación hacia valores más cercanos a 0
+                    hijo[i] = rnd.randint(-1, 1)  # Mutacion hacia valores mas cercanos a 0
         return descendencia
 
     def seleccionAmbiental(self, descendencia, padres, n):

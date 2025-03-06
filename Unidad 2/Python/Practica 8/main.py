@@ -22,7 +22,7 @@ def main():
             else:
                 print("leyendo mas datos")
 
-        print(f"\nDatos del día {dia} (datos leidos): {data}")
+        print(f"\nDatos del dia {dia} (datos leidos): {data}")
 
         cleaned_data = limpiar_datos([[d] for d in data])
 

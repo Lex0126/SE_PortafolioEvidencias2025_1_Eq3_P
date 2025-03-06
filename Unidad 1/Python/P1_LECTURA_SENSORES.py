@@ -3,7 +3,7 @@ import csv
 
 class P1_LECTURA_SENSORES:
     def leer_arduino(self):
-        arduino = conn.Serial(port="COM4", baudrate=9600, timeout=1)
+        arduino = conn.Serial(port="COM6", baudrate=9600, timeout=1)
         while True:
             a = arduino.readline().decode().strip()
             if a:
@@ -32,7 +32,7 @@ class P1_LECTURA_SENSORES:
             writer.writerow(headers)
             for vector, vo in matriz:
                 writer.writerow(vector + [vo])
-        print(f"Población guardada en '{archivo_csv}'")
+        print(f"Poblacion guardada en '{archivo_csv}'")
 
 
 

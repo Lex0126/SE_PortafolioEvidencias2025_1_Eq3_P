@@ -2,8 +2,8 @@ import random as rnd
 import serial
 import time
 
-class OneMaxProblem:
-    def __init__(self, Vo, port="COM4", baudrate=9600, timeout=100, max_intentos=10):
+class onemaxproblem:
+    def __init__(self, Vo, port="COM6", baudrate=9600, timeout=100, max_intentos=10):
         self.__vO = Vo  # Almacena los valores objetivos
         self.ser = serial.Serial(port, baudrate, timeout=timeout)
         self.max_intentos = max_intentos
@@ -20,7 +20,7 @@ class OneMaxProblem:
         raise Exception("No se pudieron tomar suficientes valores")
 
     def ValorObjetivo(self, V):
-        va = sum(V)  # Maximizar la cantidad de 1s
+        va = sum(abs(i) for i in V)  # Minimizar la suma absoluta de los valores
         return va
 
     def Poblacion(self, m, n):
@@ -37,7 +37,7 @@ class OneMaxProblem:
             obj_val1 = self.ValorObjetivo(pop[idx1])
             obj_val2 = self.ValorObjetivo(pop[idx2])
             self.__vO.append(obj_val1)
-            if obj_val1 > obj_val2:
+            if obj_val1 < obj_val2:
                 padres.append(pop[idx1][:])
             else:
                 padres.append(pop[idx2][:])
@@ -60,7 +60,7 @@ class OneMaxProblem:
             for i in range(len(hijo)):
                 r = rnd.randint(0, 100)
                 if r > rm:
-                    hijo[i] = 1 - hijo[i]  # Invierte el bit (0 -> 1, 1 -> 0)
+                    hijo[i] = rnd.randint(0, 0)  # Mutacion hacia valores mas cercanos a 0
         return descendencia
 
     def seleccionAmbiental(self, descendencia, padres, n):
@@ -72,12 +72,13 @@ class OneMaxProblem:
         for i in range(len(seleccion)):
             num1 = self.ValorObjetivo(seleccion[i])
             seleccion[i].append(num1)
-        seleccion.sort(key=lambda individuo: individuo[-1], reverse=True)
+        seleccion.sort(key=lambda individuo: individuo[-1])
         for seleccionado in seleccion:
             seleccionado.pop()
         seleccion = seleccion[:n]
         return seleccion
 
     def promedioVO(self):
-        promedio = sum(self.__vO) / len(self.__vO) if self.__vO else 0
+        promedio = sum(self.__vO) / len(self.__vO) if self.__vO else 1
         return promedio
+

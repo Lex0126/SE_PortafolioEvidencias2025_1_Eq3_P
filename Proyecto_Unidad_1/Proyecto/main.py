@@ -1,4 +1,4 @@
-import clase_suma_cuadrados as opt
+"""import clase_suma_cuadrados as opt
 import random
 if __name__ == "__main__":
     minv = 0
@@ -37,22 +37,21 @@ if __name__ == "__main__":
             print(seleccionados)
         pop = seleccion
         promedio = obj.promedioVO()
-        Vo.clear()
+        Vo.clear()"""
 
-"""import one_max_problem as opt
+'''import one_max_problem as opt
 import random
 
 if __name__ == "__main__":
-    rm = 50  # Probabilidad de mutacion
+    rm = 50
     Vo = []
-    obj = opt.OneMaxProblem(Vo)
-    pop = obj.Poblacion(10, 4)  # 10 individuos de longitud 4
+    obj = opt.onemaxproblem(Vo)
     promedio = float("inf")
-    rangoLimite = random.randint(0, 4)  # Se detiene cuando la media sea <= a este valor
-    print("Limite de parada:", rangoLimite)
+    rangoLimite = random.randint(1, 1)
+    pop = obj.Poblacion(10, 4)
 
-    while promedio > rangoLimite:
-        print("\nPoblacion:")
+    while promedio > rangoLimite:  # Se detiene cuando toda la población es [1,1,1,1]
+        print("\nPoblación:")
         for indv in pop:
             print(indv)
 
@@ -62,25 +61,25 @@ if __name__ == "__main__":
             print(padre)
 
         descendencia = obj.cruzaEnunPunto(padres)
-        print("\nHijos antes de mutacion:")
+        print("\nHijos:")
         for hijo in descendencia:
             print(hijo)
 
         mutacionDes = obj.mutacion(descendencia, rm)
-        print("\nHijos después de mutacion:")
+        print("\nHijos después de mutación:")
         for hijo in mutacionDes:
             print(hijo)
 
         seleccion = obj.seleccionAmbiental(descendencia, padres, 10)
-        print("\nSeleccion final:")
-        for seleccionados in seleccion:
-            print(seleccionados)
+        print("\nSelección:")
+        for seleccionado in seleccion:
+            print(seleccionado)
 
         pop = seleccion
-        promedio = obj.promedioVO()
-        Vo.clear()"""
+        Vo.clear()'''
 
-"""import valor_absoluto as opt
+
+import valor_absoluto as opt
 import random
 
 if __name__ == "__main__":
@@ -121,4 +120,4 @@ if __name__ == "__main__":
         promedio = obj.promedioVO()
         Vo.clear()
 
-    print("\nOptimizacion completada")"""
+    print("\nOptimizacion completada")

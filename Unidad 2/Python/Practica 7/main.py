@@ -8,7 +8,7 @@ def main(archivo="24hrs.csv"):
     data = leer_datos(archivo)
 
     while True:
-        print(f"\nDía {dia}")
+        print(f"\nDia {dia}")
 
         if dia == 1:
             vector = [float(row[0]) for row in data]

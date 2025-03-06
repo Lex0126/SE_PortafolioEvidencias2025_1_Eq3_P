@@ -9,27 +9,27 @@ def main():
     previous_estado = ""
 
     while True:
-        print(f"\nDía {dia}")
+        print(f"\nDia {dia}")
 
         while len(data) < 24:
             if ser.in_waiting > 0:
                 temp = ser.readline().decode('utf-8').strip()
                 if temp.replace('.', '', 1).isdigit():
                     data.append(float(temp))
-                    print(f"Temperatura leída: {temp}°C")
+                    print(f"Temperatura leida: {temp}°C")
                 else:
-                    print("Dato no válido recibido, ignorando...")
+                    print("dato no valida")
             else:
-                print("Esperando más datos...")
+                print("leyendo mas datos")
 
-        print(f"\nDatos del día {dia} (24 datos leídos): {data}")
+        print(f"\nDatos del día {dia} (datos leidos): {data}")
 
         cleaned_data = limpiar_datos([[d] for d in data])
 
         n_vector, s_valor = proc_ses([d[0] for d in cleaned_data], dia=dia)
 
-        print(f"\nValores procesados del día {dia}: {n_vector}")
-        print(f"Estado del AC en el día {dia}: {s_valor}")
+        print(f"\nValores procesados del dia {dia}: {n_vector}")
+        print(f"Estado del AC en el dia {dia}: {s_valor}")
 
         for hora, estado in enumerate(s_valor, start=1):
             print(f"{estado}")
@@ -42,7 +42,7 @@ def main():
 
         dia += 1
 
-        if dia == 8:
+        if dia == 7:
             dia = 1
             print("\nSiguiente semana\n")
 

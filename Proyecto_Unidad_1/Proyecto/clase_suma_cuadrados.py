@@ -3,7 +3,7 @@ import serial
 import time
 
 class SumadeCuadrados:
-    def __init__(self, minv, maxv, Vo,port ="COM4",baudrate = 9600,timeout=100,max_intentos =10 ):
+    def __init__(self, minv, maxv, Vo,port ="COM6",baudrate = 9600,timeout=100,max_intentos =10 ):
         self.__min = minv
         self.__max = maxv
         self.__vO = Vo

@@ -58,9 +58,8 @@ def proc_ses(vector,dia=1):
     modelo = ARIMA(vector, order=(2, 1, 2))  # Definir modelo ARIMA(2,1,2)
     modelo_ajustado = modelo.fit()  # Ajustar modelo
 
-    n_vector = modelo_ajustado.fittedvalues.tolist()  # Convertir predicciones a lista
-    s_valor = []  # Lista para decisiones del AC
-
+    n_vector = modelo_ajustado.fittedvalues.tolist()
+    s_valor = []
     for i in range(1, len(vector)):
         n_valor = n_vector[i]  # Usar valores de ARIMA en vez del suavizamiento exponencial
 

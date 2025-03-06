@@ -1,6 +1,6 @@
 #include <DHT.h>
 
-#define DHTPIN 2        // Pin donde está conectado el sensor DHT
+#define DHTPIN 2        // Pin donde esta conectado el sensor DHT
 #define DHTTYPE DHT11   // Tipo de sensor DHT
 
 DHT dht(DHTPIN, DHTTYPE);

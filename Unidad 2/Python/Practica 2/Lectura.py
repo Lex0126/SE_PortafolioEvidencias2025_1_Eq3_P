@@ -39,6 +39,6 @@ class Lectura:
     def guardar_vectores_csv(self, vectores, filename):
         df = pd.DataFrame(vectores, columns=["FechaHora", "Temperatura"])
         df.to_csv(filename, index=False)
-        # Imprimir cada fila leída
+        # Imprimir cada fila leida
         for index, row in df.iterrows():
             print(f"Fila {index + 1}: Fecha y Hora: {row['FechaHora']} - Temperatura: {row['Temperatura']}")

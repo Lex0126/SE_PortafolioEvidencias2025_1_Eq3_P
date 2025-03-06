@@ -9,7 +9,7 @@ def main():
     previous_estado = ""
 
     while True:
-        print(f"\nDía {dia}")
+        print(f"\nDia {dia}")
 
         while len(data) < 24:
             if ser.in_waiting > 0:

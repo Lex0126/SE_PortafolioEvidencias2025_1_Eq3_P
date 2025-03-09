@@ -1,6 +1,7 @@
 import time
 import serial
-from Practica_6 import limpiar_datos, proc_ses
+from proyecto import limpiar_datos, proc_ses
+
 
 def main():
     ser = serial.Serial('COM6', 9600)
@@ -10,7 +11,7 @@ def main():
     while True:
         print(f"\nDia {dia}")
 
-        while len(data) < 24:
+        while len(data) <= 24:
             if ser.in_waiting > 0:
                 temp = ser.readline().decode('utf-8').strip()
                 if temp.replace('.', '', 1).isdigit():
@@ -49,7 +50,6 @@ def main():
         data.clear()
         time.sleep(10)
 
+
 if __name__ == "__main__":
     main()
-
-

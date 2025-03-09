@@ -1,3 +1,5 @@
+import random
+
 import numpy as np
 import math
 import matplotlib.pyplot as plt
@@ -44,16 +46,28 @@ def limpiar_datos(data):
 
     return datos_limpios
 
-def proc_ses(vector, alfa=0.7):
+def proc_ses(vector,dia=1):
     n_vector = [float(vector[0])]
-    s_valor = []  # Para cada día
+    s_valor = []  # Para cada dia
+    alfa = 0
+
 
     for i in range(1, len(vector)):
+        valor_real = vector[i]
+        valor_suavizado = n_vector[i - 1]
+
+        x = random.uniform(0,1)
+        alfa += x * (valor_real - valor_suavizado)
+        #alfa = (valor_real - valor_suavizado) / (valor_real + valor_suavizado)
+        if alfa <0.1 or alfa>1: # puse esto por si acaso porque daba valores bien locos
+            alfa = random.uniform(0.3,1)
+
         n_valor = alfa * (vector[i] + (1 - alfa) * n_vector[i - 1])
         n_vector.append(n_valor)
 
+
         # vemos si prende o apaga
-        if n_valor > 30.5:
+        if n_valor > 26.5:
             s_valor.append(f"{i}: Prender AC")
         else:
             s_valor.append(f"{i}: Apagar AC")

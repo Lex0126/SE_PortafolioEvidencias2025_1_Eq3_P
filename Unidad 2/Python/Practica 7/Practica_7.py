@@ -41,7 +41,6 @@ def limpiar_datos(data):
     # Convertimos a lista de valores numericos
     column_data = [float(row[0]) for row in data]
 
-    # Rellenar vacíos
     for i in range(1, len(column_data) - 1):
         if column_data[i] == '' and i != 0 and i != len(column_data) - 1:
             column_data[i] = column_data[i - 1] + (
@@ -56,7 +55,7 @@ def limpiar_datos(data):
 
 def proc_ses(vector,dia=1):
     modelo = ARIMA(vector, order=(2, 1, 2))  # Definir modelo ARIMA(2,1,2)
-    modelo_ajustado = modelo.fit()  # Ajustar modelo
+    modelo_ajustado = modelo.fit()
 
     n_vector = modelo_ajustado.fittedvalues.tolist()
     s_valor = []

@@ -32,7 +32,6 @@ def limpiar_datos(data):
     # Convertimos nuestra lista leida en valores numericos
     column_data = [float(row[0]) for row in data]
 
-    # Rellenar vacíos
     for i in range(1, len(column_data) - 1):
         if column_data[i] == '' and i != 0 and i != len(column_data) - 1:
             column_data[i] = column_data[i - 1] + (

@@ -4,7 +4,7 @@ import time
 
 class ValorAbsoluto:
     def __init__(self, Vo, port="COM4", baudrate=9600, timeout=100, max_intentos=10):
-        self.__vO = Vo  # Almacena los valores objetivos
+        self.__vO = Vo
         self.ser = serial.Serial(port, baudrate, timeout=timeout)
         self.max_intentos = max_intentos
 

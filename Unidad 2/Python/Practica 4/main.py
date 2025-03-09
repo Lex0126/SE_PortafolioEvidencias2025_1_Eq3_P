@@ -2,7 +2,6 @@ import Practica_4
 import matplotlib.pyplot as plt
 
 if __name__ == "__main__":
-    # Leer los datos desde el archivo
     datos = Practica_4.leer_datos()
 
     # Limpiar los datos

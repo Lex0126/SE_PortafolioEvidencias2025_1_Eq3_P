@@ -25,12 +25,12 @@ void loop() {
 
  
 
-  int prom = calcularPromedio(valor6, totLecturas);
-  int valorMenor = calcularValorMenor(valor2, totLecturas);
-  int valorMayor = calcularValorMayor(valor3, totLecturas);
-  int mediana = calcularMediana(valor5, totLecturas);
-  int moda = calcularModa(valor4, totLecturas);
-  int normal =leerNormal(valor1);
+  int prom = calcularPromedio(valor5, totLecturas);
+  int valorMenor = calcularValorMenor(valor1, totLecturas);
+  int valorMayor = calcularValorMayor(valor2, totLecturas);
+  int mediana = calcularMediana(valor4, totLecturas);
+  int moda = calcularModa(valor3, totLecturas);
+  int normal =leerNormal(valor6);
 
   Serial.println(String(prom)+"-"+String(valorMenor)+"-"+String(valorMayor)+"-"+String(mediana)+"-"+String(moda)+"-"+String(normal));
 

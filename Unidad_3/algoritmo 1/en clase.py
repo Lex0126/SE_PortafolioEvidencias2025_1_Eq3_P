@@ -27,7 +27,7 @@ if __name__ =="__main__":
     best_so = solucion_temporal[:]
     best_vo = calcula_fo(best_so)
 
-    max_it  =200
+    max_it  =10000
     it = 0
 
     while it< max_it:

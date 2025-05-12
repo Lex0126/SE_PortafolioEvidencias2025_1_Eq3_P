@@ -1,4 +1,4 @@
-"""import clase_suma_cuadrados as opt
+import clase_suma_cuadrados as opt
 import random
 if __name__ == "__main__":
     minv = 0
@@ -37,7 +37,7 @@ if __name__ == "__main__":
             print(seleccionados)
         pop = seleccion
         promedio = obj.promedioVO()
-        Vo.clear()"""
+        Vo.clear()
 
 '''import one_max_problem as opt
 import random
@@ -79,7 +79,7 @@ if __name__ == "__main__":
         Vo.clear()'''
 
 
-import valor_absoluto as opt
+'''import valor_absoluto as opt
 import random
 
 if __name__ == "__main__":
@@ -120,4 +120,4 @@ if __name__ == "__main__":
         promedio = obj.promedioVO()
         Vo.clear()
 
-    print("\nOptimizacion completada")
+    print("\nOptimizacion completada")'''

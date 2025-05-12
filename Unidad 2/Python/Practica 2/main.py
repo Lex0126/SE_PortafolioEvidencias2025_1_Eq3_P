@@ -6,6 +6,6 @@ if __name__ == "__main__":
     n = 144
 
     vectores = lectura.generar_Vector(n)
-    lectura.guardar_vectores_csv(vectores, 'QuintaLectura.csv')
+    lectura.guardar_vectores_csv(vectores, 'SextaLectura.csv')
 
     

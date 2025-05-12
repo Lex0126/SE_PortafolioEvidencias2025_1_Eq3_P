@@ -39,7 +39,6 @@ if __name__ =="__main__":
 
     max_it_ils = 100
     it_ils = 0
-
     max_it_local  =10000
     it_local = 0
 

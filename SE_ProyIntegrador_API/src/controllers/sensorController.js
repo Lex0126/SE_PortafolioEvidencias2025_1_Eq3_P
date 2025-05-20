@@ -37,7 +37,7 @@ const insertDeviceAndRecord = async (req, res) => {
   try {
     const { id_type, id_signal_type, name, current_value } = req.body;
     const response = await services.insertDeviceAndRecord(id_type, id_signal_type, name, current_value);
-    res.status(201).json({ message: 'Inserción correcta', data: response });
+    res.status(201).json({ message: 'Insercion correcta', data: response });
   } catch (error) {
     res.status(500).json({ error: 'Error al insertar dispositivo y registro', detalle: error.message });
   }

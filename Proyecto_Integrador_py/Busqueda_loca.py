@@ -5,7 +5,7 @@ import requests
 from Proyecto_Unidad_3.datos import SatisfaccionUsuario as s_usuario
 from Proyecto_Unidad_3.datos import ComodidadEnConsumoEnergia as s_energia
 
-# Configuración global
+# Configuracion global
 PORT = 'COM6'
 BAUD = 9600
 LECTURAS = 30

@@ -46,6 +46,7 @@ router.post('/device-with-record', controller.insertDeviceAndRecord);
 
 // http://localhost:3000/api/v1/update-device
 router.put('/update-device', controller.updateDevice);
+/* */
 
 
 module.exports = router;
